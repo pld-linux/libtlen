@@ -43,12 +43,10 @@ install -d $RPM_BUILD_ROOT%{_libdir}
 %{__make} install
 install src/libtlen.a $RPM_BUILD_ROOT%{_libdir}
 
-gzip -9nf README ChangeLog NEWS
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc *.gz
+%doc README ChangeLog NEWS
 %attr(755,root,root) %{_libdir}/*
