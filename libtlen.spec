@@ -1,30 +1,28 @@
-%define		snap 20021029
+%define		snap 20021118
 Summary:	Tlen.pl client library
 Summary(pl):	Biblioteka kliencka Tlen.pl
 Name:		libtlen
-Version:	0.1pre
+Version:	0
 Release:	0.%{snap}
+Epoch:		1
 License:	LGPL
 Group:		Libraries
-Source0:	http://devnull.bydg.pdi.net/libtlen/snapshots/%{name}-%{snap}.tar.gz
+Source0:	http://www.libtlen.eu.org/snapshots/%{name}-%{snap}.tar.gz
 Patch0:		libtlen-destdir.patch
-URL:		http://devnull.bydg.pdi.net/libtlen/
+URL:		http://www.libtlen.eu.org
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	libstdc++-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-libTlen is an object-oriented, cross-platform library which provides
-handling logic for the Tlen.pl communication protocol. libTlen is
-written in clear C++, so it can be compiled on every platform I think,
-but I didn't test it.
+libtlen is a library providing an API for client programs which want
+to use Tlen.pl, an Instant Messanging protocol based on Jabber, but 
+with some modifications.
 
 %description -l pl
-libTlen jest zorientowan± obiektowo, wieloplatformow± bibliotek±,
-która zapewnia obs³ugê protoko³u Tlen.pl. libTlen jest napisana w
-czystym C++, wiêc wydaje mi siê, ¿e mo¿e byæ kompilowana na ka¿dej
-platformie, ale nie testowa³em tego.
+Biblioteka libtlen dostarcza API dla programów klienckich korzystaj±cych
+z protoko³u Tlen.pl który bazuje na Jabber z niewielkimi modyfikacjami.
 
 %package devel
 Summary:	Header files for developping programs using libtlen
@@ -75,7 +73,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc AUTHORS
+%doc docs/AUTHORS docs/TODO
 %attr(755,root,root) %{_libdir}/*.so*
 
 %files devel
