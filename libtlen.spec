@@ -9,7 +9,7 @@ Source0:	http://glims.w-s.pl/snapshots/%{name}-%{version}.tar.bz2
 URL:		http://glims.w-s.pl/
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	libsigc++-devel
+BuildRequires:	libsigc++1-devel
 BuildRequires:	libstdc++-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
