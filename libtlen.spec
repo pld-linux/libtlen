@@ -1,4 +1,4 @@
-%define		snap 20020914
+%define		snap 20020920
 Summary:	Tlen.pl client library
 Summary(pl):	Biblioteka kliencka Tlen.pl
 Name:		libtlen
