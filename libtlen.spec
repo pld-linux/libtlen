@@ -1,13 +1,15 @@
-%define		snap 20031115
+
+%define		_snap	20031115
+
 Summary:	Tlen.pl client library
 Summary(pl):	Biblioteka kliencka Tlen.pl
 Name:		libtlen
-Version:	0
-Release:	0.%{snap}
+Version:	0.%{_snap}
+Release:	1
 Epoch:		1
 License:	LGPL
 Group:		Libraries
-Source0:	http://libtlen.eu.org/snapshots/archive/%{name}-%{snap}.tar.gz
+Source0:	http://libtlen.eu.org/snapshots/archive/%{name}-%{_snap}.tar.gz
 # Source0-md5:	ab879eeab2643153420e38cdb927468e
 URL:		http://www.libtlen.eu.org/
 BuildRequires:	autoconf
@@ -51,30 +53,37 @@ Static libtlen library.
 Biblioteka statyczna libtlen.
 
 %prep
-%setup -q -n %{name}-%{snap}
+%setup -q -n %{name}-%{_snap}
 
 %build
+
 %configure
+
 %{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
+
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
+%post	-p /sbin/ldconfig
+%postun	-p /sbin/ldconfig
+
 %files
 %defattr(644,root,root,755)
 %doc docs/AUTHORS docs/TODO
-%attr(755,root,root) %{_libdir}/*.so*
+%attr(755,root,root) %{_libdir}/libtlen.so.*.*
 
 %files devel
 %defattr(644,root,root,755)
 %doc docs/*.html
 %{_includedir}/*
+%{_libdir}/libtlen.so
 
 %files static
 %defattr(644,root,root,755)
-%{_libdir}/lib*.a
+%{_libdir}/libtlen.a
