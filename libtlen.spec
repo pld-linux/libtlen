@@ -28,7 +28,7 @@ z protoko³u Tlen.pl który bazuje na Jabber z niewielkimi modyfikacjami.
 Summary:	Header files for developping programs using libtlen
 Summary(pl):	Pliki nag³ówkowe do biblioteki libtlen
 Group:		Development/Libraries
-Requires:	%{name} = %{epoch}:%{version}
+Requires:	%{name} = %{epoch}:%{version}-%{release}
 
 %description devel
 This package is required to develop programs that use Tlen.pl
@@ -42,7 +42,7 @@ Tlen.pl.
 Summary:	Static version of libtlen library
 Summary(pl):	Biblioteka statyczna libtlen
 Group:		Development/Libraries
-Requires:	%{name}-devel = %{epoch}:%{version}
+Requires:	%{name}-devel = %{epoch}:%{version}-%{release}
 
 %description static
 Static libtlen library.
