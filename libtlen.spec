@@ -1,4 +1,4 @@
-%define		snap 20020920
+%define		snap 20021024
 Summary:	Tlen.pl client library
 Summary(pl):	Biblioteka kliencka Tlen.pl
 Name:		libtlen
@@ -7,7 +7,7 @@ Release:	0.%{snap}
 License:	LGPL
 Group:		Libraries
 Source0:	http://dev.null.pl/libtlen/snapshots/%{name}-%{snap}.tar.gz
-Patch0:		%{name}-destdir.patch
+Patch0:		libtlen-destdir.patch
 URL:		http://glims.w-s.pl/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -60,7 +60,7 @@ Biblioteka statyczna libtlen.
 %build
 #cp -f /usr/share/automake/missing .
 #%{__aclocal}
-#%{__autoconf}
+#%{__autoconf} -I m4
 #autoheader
 #%{__automake}
 %configure
@@ -77,11 +77,11 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc AUTHORS
-%attr(755,root,root) %{_libdir}/*.so
+%attr(755,root,root) %{_libdir}/*.so*
 
 %files devel
 %defattr(644,root,root,755)
-%doc docs/api.txt
+%doc docs/*.html
 %{_includedir}/*
 
 %files static

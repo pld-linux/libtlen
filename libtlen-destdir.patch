@@ -1,26 +1,19 @@
 diff -urN libtlen-20020920.orig/lib/Makefile.in libtlen-20020920/lib/Makefile.in
 --- libtlen-20020920.orig/lib/Makefile.in	Tue Sep 17 13:51:35 2002
 +++ libtlen-20020920/lib/Makefile.in	Sat Sep 21 15:53:59 2002
-@@ -47,16 +47,16 @@
+@@ -53,13 +53,13 @@
  install: install-shared install-static install-devel
  
  install-shared:
 -	$(INSTALL) -d $(libdir)
--	$(INSTALL) -m 755 $(SHARED) $(libdir)
 +	$(INSTALL) -d $(DESTDIR)$(libdir)
-+	$(INSTALL) -m 755 $(SHARED) $(DESTDIR)$(libdir)
+ 	$(INSTALL) -m 755 $(SHARED) $(DESTDIR)$(libdir)
+ 	cd $(DESTDIR)$(libdir) && $(LN_S) -f $(SHARED) $(SHAREDM)
+ 	cd $(DESTDIR)$(libdir) && $(LN_S) -f $(SHARED) $(SHAREDMM)
  
  install-static:
 -	$(INSTALL) -d $(libdir)
--	$(INSTALL) -m 755 $(STATIC) $(libdir)
 +	$(INSTALL) -d $(DESTDIR)$(libdir)
-+	$(INSTALL) -m 755 $(STATIC) $(DESTDIR)$(libdir)
+ 	$(INSTALL) -m 755 $(STATIC) $(DESTDIR)$(libdir)
  
  install-devel:
--	$(INSTALL) -d $(HEADERS_DIR)
--	$(INSTALL) -m 644 $(HEADERS) $(HEADERS_DIR)
-+	$(INSTALL) -d $(DESTDIR)$(HEADERS_DIR)
-+	$(INSTALL) -m 644 $(HEADERS) $(DESTDIR)$(HEADERS_DIR)
- 
- test:
- 	@echo -en "\n*** Generating test client ...\n\n"
