@@ -1,6 +1,6 @@
 %define		snap 20020914
 Summary:	Tlen.pl client library
-Summary(pl):	Biblioteka kliecka Tlen.pl
+Summary(pl):	Biblioteka kliencka Tlen.pl
 Name:		libtlen
 Version:	0.1pre
 Release:	0.%{snap}
@@ -29,27 +29,29 @@ platformie, ale nie testowa³em tego.
 
 %package devel
 Summary:	Header files for developping programs using libtlen
-Summary(pl):	Pliki naglowkowe do biblioteki libtlen
+Summary(pl):	Pliki nag³ówkowe do biblioteki libtlen
 Group:		Development/Libraries
-Requires: %{name} = %{version}
+Requires:	%{name} = %{version}
 
 %description devel
-This package is required to develop programs that uses Tlen.pl protocol. 
+This package is required to develop programs that use Tlen.pl
+protocol.
 
 %description devel -l pl
-Pakiet wymagany przy pisaniu programow korzystajacych z protokolu Tlen.pl
+Pakiet wymagany przy pisaniu programów korzystaj±cych z protoko³u
+Tlen.pl.
 
 %package static
-Summary:	Static version libtlen library
+Summary:	Static version of libtlen library
 Summary(pl):	Biblioteka statyczna libtlen
 Group:		Development/Libraries
-Requires: %{name}-devel = %{version}
+Requires:	%{name}-devel = %{version}
 
 %description static
-Static libtlen library
+Static libtlen library.
 
 %description static -l pl
-Biblioteka statyczna libtlen
+Biblioteka statyczna libtlen.
 
 %prep
 %setup -q -n %{name}-%{snap}
@@ -67,7 +69,7 @@ Biblioteka statyczna libtlen
 %install
 rm -rf $RPM_BUILD_ROOT
 %{__make} install \
-	    DESTDIR=$RPM_BUILD_ROOT
+	DESTDIR=$RPM_BUILD_ROOT
 
 %clean
 rm -rf $RPM_BUILD_ROOT
