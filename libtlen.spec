@@ -6,9 +6,9 @@ Version:	0.1pre
 Release:	0.%{snap}
 License:	LGPL
 Group:		Libraries
-Source0:	http://213.146.38.147/libtlen/snapshots/%{name}-%{snap}.tar.gz
+Source0:	http://devnull.bydg.pdi.net/libtlen/snapshots/%{name}-%{snap}.tar.gz
 Patch0:		libtlen-destdir.patch
-URL:		http://213.146.38.147/
+URL:		http://devnull.bydg.pdi.net/libtlen/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	libstdc++-devel
