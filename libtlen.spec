@@ -1,11 +1,13 @@
+%define		snap 20020914
 Summary:	Tlen.pl client library
 Summary(pl):	Biblioteka kliecka Tlen.pl
-Name:		libTlen
+Name:		libtlen
 Version:	0.1pre
-Release:	0.1
+Release:	0.%{snap}
 License:	LGPL
 Group:		Libraries
-Source0:	http://glims.w-s.pl/snapshots/%{name}-%{version}.tar.bz2
+Source0:	http://dev.null.pl/libtlen/snapshots/%{name}-%{snap}.tar.gz
+Patch0:		%{name}-destdir.patch
 URL:		http://glims.w-s.pl/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -25,28 +27,61 @@ która zapewnia obs³ugê protoko³u Tlen.pl. libTlen jest napisana w
 czystym C++, wiêc wydaje mi siê, ¿e mo¿e byæ kompilowana na ka¿dej
 platformie, ale nie testowa³em tego.
 
+%package devel
+Summary:	Header files for developping programs using libtlen
+Summary(pl):	Pliki naglowkowe do biblioteki libtlen
+Group:		Development/Libraries
+Requires: %{name} = %{version}
+
+%description devel
+This package is required to develop programs that uses Tlen.pl protocol. 
+
+%description devel -l pl
+Pakiet wymagany przy pisaniu programow korzystajacych z protokolu Tlen.pl
+
+%package static
+Summary:	Static version libtlen library
+Summary(pl):	Biblioteka statyczna libtlen
+Group:		Development/Libraries
+Requires: %{name}-devel = %{version}
+
+%description static
+Static libtlen library
+
+%description static -l pl
+Biblioteka statyczna libtlen
+
 %prep
-%setup -q
+%setup -q -n %{name}-%{snap}
+%patch0 -p1
 
 %build
-aclocal
-%{__autoconf}
-autoheader
-%{__automake}
+#cp -f /usr/share/automake/missing .
+#%{__aclocal}
+#%{__autoconf}
+#autoheader
+#%{__automake}
 %configure
 %{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{_libdir}
-
-%{__make} install
-install src/libtlen.a $RPM_BUILD_ROOT%{_libdir}
+%{__make} install \
+	    DESTDIR=$RPM_BUILD_ROOT
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc README ChangeLog NEWS
-%attr(755,root,root) %{_libdir}/*
+%doc AUTHORS
+%attr(755,root,root) %{_libdir}/*.so
+
+%files devel
+%defattr(644,root,root,755)
+%doc docs/api.txt
+%{_includedir}/*
+
+%files static
+%defattr(644,root,root,755)
+%{_libdir}/lib*.a
