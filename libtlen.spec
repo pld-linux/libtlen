@@ -4,8 +4,8 @@
 Summary:	Tlen.pl client library
 Summary(pl):	Biblioteka kliencka Tlen.pl
 Name:		libtlen
-Version:	0.%{_snap}
-Release:	1
+Version:	0
+Release:	0.%{_snap}.1
 Epoch:		1
 License:	LGPL
 Group:		Libraries
