@@ -1,4 +1,4 @@
-%define		snap 20021118
+%define		snap 20021122
 Summary:	Tlen.pl client library
 Summary(pl):	Biblioteka kliencka Tlen.pl
 Name:		libtlen
@@ -8,7 +8,6 @@ Epoch:		1
 License:	LGPL
 Group:		Libraries
 Source0:	http://www.libtlen.eu.org/snapshots/%{name}-%{snap}.tar.gz
-Patch0:		libtlen-destdir.patch
 URL:		http://www.libtlen.eu.org
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -52,14 +51,8 @@ Biblioteka statyczna libtlen.
 
 %prep
 %setup -q -n %{name}-%{snap}
-%patch0 -p1
 
 %build
-#cp -f /usr/share/automake/missing .
-#%{__aclocal}
-#%{__autoconf} -I m4
-#autoheader
-#%{__automake}
 %configure
 %{__make}
 
