@@ -30,9 +30,9 @@ platformie, ale nie testowa³em tego.
 
 %build
 aclocal
-autoconf
+%{__autoconf}
 autoheader
-automake -a -f
+%{__automake}
 %configure
 %{__make}
 
