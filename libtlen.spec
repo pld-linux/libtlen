@@ -17,7 +17,7 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 libtlen is a library providing an API for client programs which want
-to use Tlen.pl, an Instant Messanging protocol based on Jabber, but 
+to use Tlen.pl, an Instant Messanging protocol based on Jabber, but
 with some modifications.
 
 %description -l pl
