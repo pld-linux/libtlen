@@ -11,7 +11,6 @@ Patch0:		libtlen-destdir.patch
 URL:		http://213.146.38.147/
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	libsigc++1-devel
 BuildRequires:	libstdc++-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
