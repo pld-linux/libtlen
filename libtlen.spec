@@ -7,7 +7,7 @@ Release:	0.%{snap}
 Epoch:		1
 License:	LGPL
 Group:		Libraries
-Source0:	http://www.libtlen.eu.org/snapshots/%{name}-%{snap}.tar.gz
+Source0:	http://old.libtlen.eu.org/snapshots/%{name}-%{snap}.tar.gz
 URL:		http://www.libtlen.eu.org
 BuildRequires:	autoconf
 BuildRequires:	automake
