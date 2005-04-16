@@ -1,5 +1,5 @@
 
-%define		_snap	20040228
+%define		_snap	20041113
 
 Summary:	Tlen.pl client library
 Summary(pl):	Biblioteka kliencka Tlen.pl
@@ -9,9 +9,9 @@ Release:	0.%{_snap}.1
 Epoch:		1
 License:	LGPL
 Group:		Libraries
-Source0:	http://libtlen.eu.org/snapshots/archive/%{name}-%{_snap}.tar.gz
-# Source0-md5:	d97c4d292554da58037c54632d62a72d
-URL:		http://www.libtlen.eu.org/
+Source0:	http://dl.sourceforge.net/sourceforge/%{name}/%{name}-%{_snap}.tar.gz
+# Source0-md5:	b77c0a3234a21d1b79df8a8b9a9b9534
+URL:		http://libtlen.sourceforge.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	libstdc++-devel
