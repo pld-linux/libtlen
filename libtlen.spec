@@ -5,7 +5,7 @@ Summary:	Tlen.pl client library
 Summary(pl.UTF-8):	Biblioteka kliencka Tlen.pl
 Name:		libtlen
 Version:	0
-Release:	0.%{_snap}.1
+Release:	0.%{_snap}.2
 Epoch:		1
 License:	LGPL
 Group:		Libraries
@@ -77,6 +77,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc docs/AUTHORS docs/TODO
 %attr(755,root,root) %{_libdir}/libtlen.so.*.*
+%attr(755,root,root) %ghost %{_libdir}/libtlen.so.1
 
 %files devel
 %defattr(644,root,root,755)
